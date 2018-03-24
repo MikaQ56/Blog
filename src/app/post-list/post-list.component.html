@@ -1,0 +1,17 @@
+
+<div class="container">
+
+  <h2 class="row">Tous les articles :</h2>
+
+  <div class="row">
+
+    <div class="col-xs-12">
+
+      <app-post-list-item [post]="post" [item]="i" *ngFor="let post of postList; let i = index">
+      </app-post-list-item>
+
+    </div>
+
+  </div>
+
+</div>

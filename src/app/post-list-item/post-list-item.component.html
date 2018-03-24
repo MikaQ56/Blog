@@ -1,0 +1,28 @@
+<div class="card">
+	<div [ngClass]="
+		{
+		'card-header': true, 
+		'bg-success text-white': post.loveIts > 0,
+		'bg-danger text-white': post.loveIts < 0
+		}"> 
+		{{ post.title}}
+	</div>
+	
+	<div [ngClass]="
+		{
+		'card-body': true, 
+		'text-success': post.loveIts > 0,
+		'text-danger': post.loveIts < 0 
+		}">
+
+		<p class="card-title">{{ post.created_at | date:'short'}}</p>
+		<p class="card-content">{{ post.content}}</p>
+		<button class="btn btn-success" (click)="addLove()">Love it !</button>
+		<button class="btn btn-danger" (click)="removeLove()">Don't love it !</button>
+		<p class="text-right">
+			<button class="btn btn-secondary" (click)="onDeletePost(post)">Supprimer post</button>
+		</p>
+	</div>
+</div>
+
+
